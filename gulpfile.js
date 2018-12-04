@@ -2,7 +2,7 @@
  * @Author: mengxuying 
  * @Date: 2018-12-03 08:53:59 
  * @Last Modified by: mengxuying
- * @Last Modified time: 2018-12-04 18:30:41
+ * @Last Modified time: 2018-12-04 18:31:20
  */
 var gulp = require('gulp');
 
@@ -44,9 +44,9 @@ gulp.task('devJs', function() {
 
 
 // //监听sass js
-// gulp.task('watch', function() {
-//     gulp.watch(['./src/scss/*.scss', './src/js/**/*.js'], gulp.series(['devCss', 'devJs']))
-// })
+gulp.task('watch', function() {
+    gulp.watch(['./src/scss/*.scss', './src/js/**/*.js'], gulp.series(['devCss', 'devJs']))
+})
 
 
 // //服务
