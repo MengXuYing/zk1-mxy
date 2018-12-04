@@ -2,7 +2,7 @@
  * @Author: mengxuying 
  * @Date: 2018-12-03 08:53:59 
  * @Last Modified by: mengxuying
- * @Last Modified time: 2018-12-04 18:29:41
+ * @Last Modified time: 2018-12-04 18:30:41
  */
 var gulp = require('gulp');
 
@@ -33,14 +33,14 @@ gulp.task('devCss', function() {
 });
 
 //js
-// gulp.task('devJs', function() {
-//     return gulp.src('./src/js/**/*.js')
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('./src/minJs'))
-// });
+gulp.task('devJs', function() {
+    return gulp.src('./src/js/**/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./src/minJs'))
+});
 
 
 // //监听sass js
