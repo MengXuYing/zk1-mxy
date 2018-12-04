@@ -2,7 +2,7 @@
  * @Author: mengxuying 
  * @Date: 2018-12-03 08:53:59 
  * @Last Modified by: mengxuying
- * @Last Modified time: 2018-12-04 18:31:20
+ * @Last Modified time: 2018-12-04 18:31:47
  */
 var gulp = require('gulp');
 
@@ -50,26 +50,26 @@ gulp.task('watch', function() {
 
 
 // //服务
-// gulp.task('server', function() {
-//     return gulp.src('src')
-//         .pipe(server({
-//             potr: 9090,
-//             open: true,
-//             middleware: function(req, res, next) {
-//                 if (req.url === '/favicon.ico') {
-//                     res.end('');
-//                     return;
-//                 }
-//                 var pathname = url.parse(req.url).pathname;
+gulp.task('server', function() {
+    return gulp.src('src')
+        .pipe(server({
+            potr: 9090,
+            open: true,
+            middleware: function(req, res, next) {
+                if (req.url === '/favicon.ico') {
+                    res.end('');
+                    return;
+                }
+                var pathname = url.parse(req.url).pathname;
 
-//                 if (pathname === '/api/user') {
-//                     res.end(JSON.stringify({ code: 1, data: list }));
-//                 } else {
-//                     pathname = pathname === '/' ? '/index.html' : pathname;
-//                     res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)));
-//                 };
-//             }
-//         }))
-// })
+                if (pathname === '/api/user') {
+                    res.end(JSON.stringify({ code: 1, data: list }));
+                } else {
+                    pathname = pathname === '/' ? '/index.html' : pathname;
+                    res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)));
+                };
+            }
+        }))
+})
 
 // gulp.task('default', gulp.series('devCss', 'devJs', 'server', 'watch'))
