@@ -2,7 +2,7 @@
  * @Author: mengxuying 
  * @Date: 2018-12-03 08:53:59 
  * @Last Modified by: mengxuying
- * @Last Modified time: 2018-12-04 18:31:47
+ * @Last Modified time: 2018-12-04 18:32:19
  */
 var gulp = require('gulp');
 
@@ -72,4 +72,4 @@ gulp.task('server', function() {
         }))
 })
 
-// gulp.task('default', gulp.series('devCss', 'devJs', 'server', 'watch'))
+gulp.task('default', gulp.series('devCss', 'devJs', 'server', 'watch'))
